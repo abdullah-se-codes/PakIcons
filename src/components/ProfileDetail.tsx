@@ -215,14 +215,14 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
 
             <div className="space-y-1">
               {personality.urduName && (
-                <span className="text-base sm:text-lg font-bold text-amber-400 block font-sans break-words leading-snug dir-rtl">
+                <span className="text-base sm:text-lg font-bold text-amber-400 block font-sans whitespace-normal [word-break:normal] [overflow-wrap:anywhere] leading-snug dir-rtl">
                   {personality.urduName}
                 </span>
               )}
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white leading-tight break-words">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white leading-tight whitespace-normal [word-break:normal] [overflow-wrap:anywhere]">
                 {personality.name}
               </h1>
-              <p className="text-xs sm:text-sm lg:text-base font-semibold text-emerald-400 mt-1 leading-snug break-words">
+              <p className="text-xs sm:text-sm lg:text-base font-semibold text-emerald-400 mt-1 leading-snug whitespace-normal [word-break:normal] [overflow-wrap:anywhere]">
                 {personality.title}
               </p>
             </div>
