@@ -66,12 +66,12 @@ export const PersonalityCard: React.FC<PersonalityCardProps> = ({
         {/* Name, Urdu Name & Title */}
         <div>
           <div className="flex flex-col gap-1 mb-2">
-            <div className="flex items-start justify-between gap-2">
-              <h3 className="text-base sm:text-lg font-black tracking-tight text-white group-hover:text-amber-300 transition-colors leading-snug break-words">
+            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-2">
+              <h3 className="text-base sm:text-lg font-black tracking-tight text-white group-hover:text-amber-300 transition-colors leading-snug break-words flex-1 min-w-0">
                 {personality.name}
               </h3>
               {personality.urduName && (
-                <span className="text-sm sm:text-base font-bold text-amber-400 font-sans flex-shrink-0 dir-rtl mt-0.5">
+                <span className="text-sm sm:text-base font-bold text-amber-400 font-sans break-words dir-rtl leading-snug">
                   {personality.urduName}
                 </span>
               )}
