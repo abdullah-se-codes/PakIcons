@@ -66,23 +66,24 @@ export const PersonalityCard: React.FC<PersonalityCardProps> = ({
         {/* Name, Urdu Name & Title */}
         <div>
           <div className="flex flex-col gap-1 mb-2">
-            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-2">
-              <h3 className="text-base sm:text-lg font-black tracking-tight text-white group-hover:text-amber-300 transition-colors leading-snug break-words flex-1 min-w-0">
-                {personality.name}
-              </h3>
-              {personality.urduName && (
-                <span className="text-sm sm:text-base font-bold text-amber-400 font-sans break-words dir-rtl leading-snug">
-                  {personality.urduName}
-                </span>
-              )}
-            </div>
+            <h3 className="text-base sm:text-lg font-black tracking-tight text-white group-hover:text-amber-300 transition-colors leading-snug whitespace-normal [word-break:normal] [overflow-wrap:anywhere]">
+              {personality.name}
+            </h3>
+            {personality.urduName && (
+              <div
+                dir="rtl"
+                className="text-sm sm:text-base font-bold text-amber-400 font-sans whitespace-normal [word-break:normal] [overflow-wrap:anywhere] leading-snug"
+              >
+                {personality.urduName}
+              </div>
+            )}
 
-            <p className="text-xs font-semibold text-emerald-400 leading-snug break-words">
+            <p className="text-xs font-semibold text-emerald-400 leading-snug whitespace-normal [word-break:normal] [overflow-wrap:anywhere]">
               {personality.title} • <span className="text-slate-400 font-normal">{personality.lifespan}</span>
             </p>
           </div>
 
-          <p className="text-xs text-slate-300 leading-relaxed break-words">
+          <p className="text-xs text-slate-300 leading-relaxed whitespace-normal [word-break:normal] [overflow-wrap:anywhere]">
             {personality.shortDescription}
           </p>
         </div>
