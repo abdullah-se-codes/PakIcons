@@ -215,7 +215,7 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
 
             <div className="space-y-1">
               {personality.urduName && (
-                <span className="text-base sm:text-lg font-bold text-amber-400 block font-sans">
+                <span className="text-base sm:text-lg font-bold text-amber-400 block font-sans break-words leading-snug dir-rtl">
                   {personality.urduName}
                 </span>
               )}
