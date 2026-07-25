@@ -1,0 +1,6 @@
+{
+  "name": "PakIcons",
+  "description": "Highlighting influential Pakistani personalities across science, medicine, engineering, sports, arts, literature, military, and social reform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
