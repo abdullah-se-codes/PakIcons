@@ -34,9 +34,9 @@ export default function App() {
   const [savedIds, setSavedIds] = useState<string[]>(() => {
     try {
       const saved = localStorage.getItem('pakicons_saved_ids');
-      return saved ? JSON.parse(saved) : ['abdus-salam', 'abdul-sattar-edhi'];
+      return saved ? JSON.parse(saved) : [];
     } catch {
-      return ['abdus-salam', 'abdul-sattar-edhi'];
+      return [];
     }
   });
 
