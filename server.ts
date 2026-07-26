@@ -53,14 +53,16 @@ app.post("/api/ai/generate", async (req, res) => {
       });
     }
 
-    let systemInstruction = "You are an expert Pakistani historian and biographer for the PakIcons web application. Provide structured, inspirational, educational, and verified factual details.";
+    let systemInstruction = "You are an expert Pakistani historian, biographer, and educational scholar for the PakIcons web application. Provide accurate, verified, precise, historically grounded, and educational responses.";
 
     if (type === "ask") {
-      systemInstruction += " Keep your answer strictly short, concise, and direct to the point (2-3 sentences max). Do NOT include any greetings, introductory preamble, or conversational fluff.";
-    }
-
-    if (type === "quiz") {
-      systemInstruction += " Output JSON format for a quiz with 3 multiple choice questions, each having 'question', 'options' (array of 4 strings), 'correctAnswer' (0-indexed integer), and 'explanation' (string).";
+      systemInstruction += " Answer the question accurately, precisely, and directly with factual historical detail. Keep the response concise, clear, and informative without any greetings, introductory preambles, or conversational filler.";
+    } else if (type === "summary") {
+      systemInstruction += " Provide an accurate, inspiring, and well-structured biography summary focusing on major achievements, national contributions, and lasting legacy.";
+    } else if (type === "comparison") {
+      systemInstruction += " Provide a clear, balanced, and structured comparative analysis highlighting key contributions, fields of impact, and historical legacy.";
+    } else if (type === "quiz") {
+      systemInstruction += " Output valid JSON format for a quiz with 3 multiple choice questions, each having 'question', 'options' (array of 4 strings), 'correctAnswer' (0-indexed integer), and 'explanation' (string). Ensure all questions and answers are historically accurate.";
     }
 
     const response = await ai.models.generateContent({
@@ -68,7 +70,7 @@ app.post("/api/ai/generate", async (req, res) => {
       contents: prompt,
       config: {
         systemInstruction,
-        temperature: 0.7,
+        temperature: 0.2,
       },
     });
 
