@@ -60,6 +60,24 @@ For students, educators, researchers, and the global Pakistani diaspora, histori
 
 *AI Historian powered by Gemini 3.6 Flash generating interactive quizzes, study notes, and concise Q&A responses.*
 
+---
+
+### 4. Interactive AI Quiz Module & Scoring
+<a href="https://drive.google.com/file/d/1q376V9-uhSbA7G45cg-SAtoa8QgNo9wC/view?usp=drive_link" target="_blank">
+  <img src="https://lh3.googleusercontent.com/d/1q376V9-uhSbA7G45cg-SAtoa8QgNo9wC" alt="Interactive Quiz Module" width="850" style="border-radius: 12px; border: 1px solid #1e293b; margin-bottom: 20px;" />
+</a>
+
+*Interactive personalized MCQ quiz with real-time answer validation, explanations, and randomized option positions.*
+
+---
+
+### 5. Side-by-Side Personality Comparison Matrix
+<a href="https://drive.google.com/file/d/1RROu5vCj6F2Ef_glfXn9FEBtjsooC0Og/view?usp=drive_link" target="_blank">
+  <img src="https://lh3.googleusercontent.com/d/1RROu5vCj6F2Ef_glfXn9FEBtjsooC0Og" alt="Side-by-Side Comparison Tool" width="850" style="border-radius: 12px; border: 1px solid #1e293b; margin-bottom: 20px;" />
+</a>
+
+*Comparing two Pakistani national figures side-by-side across category, era, achievements, and historical impact.*
+
 </div>
 
 ---
