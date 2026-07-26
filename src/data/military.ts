@@ -291,5 +291,27 @@ export const MILITARY_HEROES: Personality[] = [
     awards: [
       { year: '1965', title: 'Sitara-e-Jurat (with Bar)', organization: 'Pakistan Air Force' }
     ]
+  }),
+
+  createPersonality({
+    id: 'tahira-qazi',
+    name: 'Madam Tahira Qazi Shaheed',
+    urduName: 'میڈم طاہرہ قاضی شہید',
+    title: 'Heroic APS Principal & Sitara-e-Shujaat Recipient',
+    category: 'Military Heroes',
+    lifespan: '1951 – 2014',
+    birthPlace: 'Peshawar, Khyber Pakhtunkhwa',
+    image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80',
+    featuredQuote: 'They are my children and I am their mother. I will not leave them.',
+    shortDescription: 'Heroic Principal of Army Public School Peshawar who sacrificed her life protecting her students during the 2014 terror attack.',
+    fullBio: 'Tahira Qazi was a devoted educator and the principal of Army Public School (APS) Peshawar. On December 16, 2014, when armed terrorists attacked the school, Madam Tahira Qazi demonstrated extraordinary courage by standing between the attackers and her students. She guided dozens of children and staff to safety, refused to abandon her pupils, and embraced martyrdom in defense of her school.',
+    impactDomain: 'National',
+    tags: ['APS Peshawar', 'National Hero', 'Martyr', 'Sitara-e-Shujaat', 'Peshawar', 'Educator Hero'],
+    keyContributions: [
+      'Stood courageously as a shield to protect Army Public School students during the December 2014 attack',
+      'Refused to evacuate herself, ensuring scores of children were safely escorted out',
+      'Posthumously awarded Sitara-e-Shujaat (Star of Bravery) for unmatched courage and maternal selflessness'
+    ],
+    awards: [{ year: '2015', title: 'Sitara-e-Shujaat (Posthumous)', organization: 'Government of Pakistan' }]
   })
 ];
