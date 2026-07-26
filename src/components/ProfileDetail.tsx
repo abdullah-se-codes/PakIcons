@@ -15,13 +15,11 @@ import {
   CheckCircle2, 
   XCircle, 
   RotateCcw, 
-  Send, 
   Copy, 
   Check, 
   ArrowRightLeft,
   Loader2,
-  Globe,
-  MessageSquare
+  Globe
 } from 'lucide-react';
 import { Personality, QuizQuestion } from '../types';
 import { ThematicIconBadge } from './ThematicIconBadge';
@@ -42,7 +40,7 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
   onToggleSave,
   onSelectForCompare,
 }) => {
-  const [activeAiTab, setActiveAiTab] = useState<'summary' | 'exam' | 'child' | 'quiz' | 'ask'>('summary');
+  const [activeAiTab, setActiveAiTab] = useState<'summary' | 'exam' | 'child' | 'quiz'>('summary');
   const [copiedQuote, setCopiedQuote] = useState(false);
 
   // Quiz State
@@ -50,16 +48,6 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
   const [quizSubmitted, setQuizSubmitted] = useState(false);
   const [quizScore, setQuizScore] = useState(0);
-
-  // Ask AI state
-  const [userQuestion, setUserQuestion] = useState('');
-  const [aiChatHistory, setAiChatHistory] = useState<{ role: 'user' | 'ai'; text: string }[]>([
-    {
-      role: 'ai',
-      text: `Assalamu Alaikum! I am your AI assistant for ${personality.name}. Ask me any question about their life, achievements, historical impact, or legacy!`
-    }
-  ]);
-  const [aiLoading, setAiLoading] = useState(false);
 
   // Gemini Live AI Regeneration for Summary
   const [customSummary, setCustomSummary] = useState<string | null>(null);
@@ -116,37 +104,6 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
       setCustomSummary(personality.aiData.summary);
     } finally {
       setSummaryLoading(false);
-    }
-  };
-
-  const handleSendQuestion = async () => {
-    if (!userQuestion.trim() || aiLoading) return;
-    const q = userQuestion.trim();
-    setUserQuestion('');
-    setAiChatHistory((prev) => [...prev, { role: 'user', text: q }]);
-    setAiLoading(true);
-
-    try {
-      const res = await fetch('/api/ai/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          prompt: `Question regarding Pakistani icon ${personality.name} (${personality.title}, ${personality.category}): "${q}". Context: ${personality.shortDescription}. Answer accurately, precisely, and directly with factual historical detail.`,
-          personalityName: personality.name,
-          type: 'ask'
-        })
-      });
-      const data = await res.json();
-      if (data.result) {
-        setAiChatHistory((prev) => [...prev, { role: 'ai', text: data.result }]);
-      } else {
-        setAiChatHistory((prev) => [...prev, { role: 'ai', text: `${personality.name} was a key pioneer in ${personality.category}. ${personality.shortDescription}` }]);
-      }
-    } catch (err) {
-      console.error(err);
-      setAiChatHistory((prev) => [...prev, { role: 'ai', text: `${personality.name} made historic contributions in ${personality.category}. Learn more in the milestones section!` }]);
-    } finally {
-      setAiLoading(false);
     }
   };
 
@@ -378,7 +335,7 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
             </div>
 
             {/* AI Feature Tabs */}
-            <div className="grid grid-cols-5 p-2 bg-slate-950 border-b border-slate-800 text-xs font-semibold text-slate-300">
+            <div className="grid grid-cols-4 p-2 bg-slate-950 border-b border-slate-800 text-xs font-semibold text-slate-300">
               <button
                 onClick={() => setActiveAiTab('summary')}
                 className={`py-2 px-1 rounded-xl text-center flex flex-col items-center gap-1 transition-all ${
@@ -417,16 +374,6 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
               >
                 <HelpCircle className="w-3.5 h-3.5" />
                 <span className="text-[10px]">AI Quiz</span>
-              </button>
-
-              <button
-                onClick={() => setActiveAiTab('ask')}
-                className={`py-2 px-1 rounded-xl text-center flex flex-col items-center gap-1 transition-all ${
-                  activeAiTab === 'ask' ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold border border-emerald-800/50' : 'hover:bg-slate-800/50'
-                }`}
-              >
-                <MessageSquare className="w-3.5 h-3.5" />
-                <span className="text-[10px]">AI Ask</span>
               </button>
             </div>
 
@@ -602,50 +549,6 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
                       </button>
                     </div>
                   )}
-                </div>
-              )}
-
-              {/* TAB 5: Ask AI Assistant */}
-              {activeAiTab === 'ask' && (
-                <div className="space-y-3 flex flex-col h-[340px]">
-                  <div className="flex-1 overflow-y-auto space-y-2.5 pr-1 no-scrollbar text-xs sm:text-sm">
-                    {aiChatHistory.map((msg, i) => (
-                      <div
-                        key={i}
-                        className={`p-3.5 rounded-2xl max-w-[88%] leading-relaxed whitespace-normal break-words ${
-                          msg.role === 'user'
-                            ? 'ml-auto bg-emerald-600 text-white font-medium shadow-md'
-                            : 'bg-slate-900 text-slate-200 border border-slate-800'
-                        }`}
-                      >
-                        {msg.text}
-                      </div>
-                    ))}
-                    {aiLoading && (
-                      <div className="p-3.5 rounded-2xl bg-slate-900 text-slate-400 flex items-center gap-2 text-xs border border-slate-800">
-                        <Loader2 className="w-4 h-4 animate-spin text-emerald-400" />
-                        <span>Consulting Gemini AI...</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="flex items-center gap-2 pt-3 border-t border-slate-800">
-                    <input
-                      type="text"
-                      value={userQuestion}
-                      onChange={(e) => setUserQuestion(e.target.value)}
-                      onKeyDown={(e) => e.key === 'Enter' && handleSendQuestion()}
-                      placeholder={`Ask anything about ${personality.name}...`}
-                      className="flex-1 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm bg-slate-900 text-slate-100 border border-slate-800 focus:outline-none focus:border-emerald-500"
-                    />
-                    <button
-                      onClick={handleSendQuestion}
-                      disabled={!userQuestion.trim() || aiLoading}
-                      className="p-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white disabled:opacity-50 transition-colors"
-                    >
-                      <Send className="w-4 h-4" />
-                    </button>
-                  </div>
                 </div>
               )}
 
