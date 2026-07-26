@@ -22,6 +22,7 @@ import {
   Globe
 } from 'lucide-react';
 import { Personality, QuizQuestion } from '../types';
+import { ensureDiverseOptionPositions } from '../data/dataUtils';
 import { ThematicIconBadge } from './ThematicIconBadge';
 import { SymbolicVisual } from './SymbolicVisual';
 
@@ -59,7 +60,7 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
 
   // Sync state whenever personality changes
   useEffect(() => {
-    setCurrentQuiz(personality.aiData.quiz);
+    setCurrentQuiz(ensureDiverseOptionPositions(personality.aiData.quiz));
     setQuizAnswers({});
     setQuizSubmitted(false);
     setQuizScore(0);
@@ -173,7 +174,7 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
         const cleaned = data.result.replace(/```json/g, '').replace(/```/g, '').trim();
         const parsed = JSON.parse(cleaned);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          setCurrentQuiz(parsed);
+          setCurrentQuiz(ensureDiverseOptionPositions(parsed));
           handleResetQuiz();
         }
       }
