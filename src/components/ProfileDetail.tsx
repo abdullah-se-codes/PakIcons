@@ -131,7 +131,7 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-      prompt: `Question regarding Pakistani icon ${personality.name}: "${q}". Context: ${personality.shortDescription}. Answer strictly in a short, concise, and direct-to-the-point response (maximum 2-3 sentences) with zero preamble, greeting, or filler fluff.`,
+          prompt: `Question regarding Pakistani icon ${personality.name} (${personality.title}, ${personality.category}): "${q}". Context: ${personality.shortDescription}. Answer accurately, precisely, and directly with factual historical detail.`,
           personalityName: personality.name,
           type: 'ask'
         })
