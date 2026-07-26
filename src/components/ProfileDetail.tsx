@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   ArrowLeft, 
   Bookmark, 
@@ -29,7 +29,7 @@ interface ProfileDetailProps {
   personality: Personality;
   onBack: () => void;
   isSaved: boolean;
-  onToggleSave: (id: string, e: React.MouseEvent) => void;
+  onToggleSave: (id: string, e?: React.MouseEvent) => void;
   onSelectForCompare: (id: string) => void;
 }
 
@@ -48,10 +48,24 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
   const [quizSubmitted, setQuizSubmitted] = useState(false);
   const [quizScore, setQuizScore] = useState(0);
+  const [quizLoading, setQuizLoading] = useState(false);
 
-  // Gemini Live AI Regeneration for Summary
+  // Gemini Live AI Regeneration for Summary & Story
   const [customSummary, setCustomSummary] = useState<string | null>(null);
   const [summaryLoading, setSummaryLoading] = useState(false);
+
+  const [customChildStory, setCustomChildStory] = useState<{ title: string; story: string; moralLesson: string } | null>(null);
+  const [storyLoading, setStoryLoading] = useState(false);
+
+  // Sync state whenever personality changes
+  useEffect(() => {
+    setCurrentQuiz(personality.aiData.quiz);
+    setQuizAnswers({});
+    setQuizSubmitted(false);
+    setQuizScore(0);
+    setCustomSummary(null);
+    setCustomChildStory(null);
+  }, [personality.id]);
 
   const handleCopyQuote = () => {
     navigator.clipboard.writeText(`"${personality.featuredQuote}" — ${personality.name}`);
@@ -104,6 +118,69 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
       setCustomSummary(personality.aiData.summary);
     } finally {
       setSummaryLoading(false);
+    }
+  };
+
+  const handleRegenerateStory = async () => {
+    setStoryLoading(true);
+    try {
+      const res = await fetch('/api/ai/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prompt: `Write an inspiring, child-friendly bedtime story about ${personality.name} (${personality.title}). Focus on their childhood in ${personality.birthPlace}, their key achievement (${personality.keyContributions[0] || personality.shortDescription}), and moral lesson. Return valid JSON with fields: 'title', 'story' (2-3 paragraphs), 'moralLesson'.`,
+          personalityName: personality.name,
+          type: 'summary'
+        })
+      });
+      const data = await res.json();
+      if (data.result) {
+        try {
+          const cleaned = data.result.replace(/```json/g, '').replace(/```/g, '').trim();
+          const parsed = JSON.parse(cleaned);
+          if (parsed.story && parsed.title) {
+            setCustomChildStory(parsed);
+          }
+        } catch {
+          setCustomChildStory({
+            title: `The Inspiring Journey of ${personality.name}`,
+            story: data.result,
+            moralLesson: `Hard work, courage, and dedication can achieve extraordinary goals.`
+          });
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setStoryLoading(false);
+    }
+  };
+
+  const handleRegenerateQuiz = async () => {
+    setQuizLoading(true);
+    try {
+      const res = await fetch('/api/ai/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prompt: `Generate a 5-question multiple choice quiz about Pakistani icon ${personality.name} (${personality.title}, ${personality.category}). Context: ${personality.shortDescription}. Return valid JSON array of 5 objects, each with 'id' (1 to 5), 'question' (string), 'options' (array of 4 strings), 'correctAnswer' (0-indexed integer), and 'explanation' (string).`,
+          personalityName: personality.name,
+          type: 'quiz'
+        })
+      });
+      const data = await res.json();
+      if (data.result) {
+        const cleaned = data.result.replace(/```json/g, '').replace(/```/g, '').trim();
+        const parsed = JSON.parse(cleaned);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setCurrentQuiz(parsed);
+          handleResetQuiz();
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setQuizLoading(false);
     }
   };
 
@@ -443,12 +520,35 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
               {/* TAB 3: Child-Friendly Story */}
               {activeAiTab === 'child' && (
                 <div className="space-y-4 text-xs sm:text-sm">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                      Child-Friendly Biography
+                    </span>
+                    <button
+                      onClick={handleRegenerateStory}
+                      disabled={storyLoading}
+                      className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-950 text-amber-300 border border-amber-800/50 hover:bg-amber-900 flex items-center gap-1.5 disabled:opacity-50 transition-colors"
+                    >
+                      {storyLoading ? (
+                        <>
+                          <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          <span>Generating...</span>
+                        </>
+                      ) : (
+                        <>
+                          <RotateCcw className="w-3.5 h-3.5" />
+                          <span>Regenerate AI Story</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+
                   <div className="p-4 sm:p-5 rounded-2xl bg-amber-950/30 border border-amber-800/40 space-y-2">
                     <h4 className="font-bold text-amber-300 text-sm sm:text-base leading-snug">
-                      {personality.aiData.childStory.title}
+                      {(customChildStory || personality.aiData.childStory).title}
                     </h4>
                     <p className="text-xs sm:text-sm text-slate-200 leading-relaxed whitespace-normal break-words">
-                      {personality.aiData.childStory.story}
+                      {(customChildStory || personality.aiData.childStory).story}
                     </p>
                   </div>
 
@@ -456,7 +556,7 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
                     <Sparkles className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
                     <div className="space-y-1 whitespace-normal break-words">
                       <span className="font-bold text-emerald-300 block">Moral Lesson for Kids:</span>
-                      <p>{personality.aiData.childStory.moralLesson}</p>
+                      <p>{(customChildStory || personality.aiData.childStory).moralLesson}</p>
                     </div>
                   </div>
                 </div>
@@ -465,20 +565,47 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
               {/* TAB 4: Interactive Quiz Generator */}
               {activeAiTab === 'quiz' && (
                 <div className="space-y-4 text-xs sm:text-sm">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                      <span>Personalized Quiz</span>
+                      <span className="px-2 py-0.5 rounded-md bg-emerald-950 text-emerald-300 border border-emerald-800/60 text-[10px]">
+                        {currentQuiz.length} MCQs
+                      </span>
+                    </span>
+
+                    <button
+                      onClick={handleRegenerateQuiz}
+                      disabled={quizLoading}
+                      className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-950 text-emerald-300 border border-emerald-800/50 hover:bg-emerald-900 flex items-center gap-1.5 disabled:opacity-50 transition-colors"
+                    >
+                      {quizLoading ? (
+                        <>
+                          <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          <span>Generating...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Sparkles className="w-3.5 h-3.5" />
+                          <span>Generate Fresh AI Quiz</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+
                   {!quizSubmitted ? (
                     <div className="space-y-4">
                       {currentQuiz.map((q, idx) => (
-                        <div key={q.id} className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+                        <div key={q.id || idx} className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
                           <p className="font-bold text-slate-100 text-xs sm:text-sm leading-relaxed whitespace-normal break-words">
                             Q{idx + 1}: {q.question}
                           </p>
                           <div className="space-y-2">
                             {q.options.map((opt, optIdx) => {
-                              const isSelected = quizAnswers[q.id] === optIdx;
+                              const isSelected = quizAnswers[q.id || idx + 1] === optIdx;
                               return (
                                 <button
                                   key={optIdx}
-                                  onClick={() => handleQuizOptionSelect(q.id, optIdx)}
+                                  onClick={() => handleQuizOptionSelect(q.id || idx + 1, optIdx)}
                                   className={`w-full text-left p-3 rounded-xl text-xs sm:text-sm font-medium transition-all leading-snug whitespace-normal break-words flex items-start gap-2.5 ${
                                     isSelected
                                       ? 'bg-emerald-600 text-white font-bold shadow-md ring-2 ring-emerald-400/40'
@@ -503,7 +630,7 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
                         disabled={Object.keys(quizAnswers).length < currentQuiz.length}
                         className="w-full py-3 rounded-xl font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-950/80 disabled:opacity-50 transition-colors text-xs sm:text-sm"
                       >
-                        Submit Answers
+                        Submit Answers ({Object.keys(quizAnswers).length}/{currentQuiz.length})
                       </button>
                     </div>
                   ) : (
@@ -520,10 +647,10 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
 
                       <div className="space-y-3 text-left">
                         {currentQuiz.map((q, idx) => {
-                          const userAns = quizAnswers[q.id];
+                          const userAns = quizAnswers[q.id || idx + 1];
                           const isCorrect = userAns === q.correctAnswer;
                           return (
-                            <div key={q.id} className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 text-xs sm:text-sm space-y-1.5">
+                            <div key={q.id || idx} className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 text-xs sm:text-sm space-y-1.5">
                               <div className="flex items-start gap-2 font-bold text-slate-100 whitespace-normal break-words">
                                 {isCorrect ? (
                                   <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
