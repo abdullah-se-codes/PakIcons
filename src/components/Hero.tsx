@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({
   const [achievementsCount, setAchievementsCount] = useState(0);
 
   useEffect(() => {
-    const targetCount = Math.max(100, totalCount);
+    const targetCount = 100;
     const duration = 1200;
     const steps = 30;
     const interval = duration / steps;
@@ -59,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({
     }, interval);
 
     return () => clearInterval(timer);
-  }, [totalCount]);
+  }, []);
 
   return (
     <div className="relative overflow-hidden pt-8 pb-12 bg-gradient-to-b from-emerald-950 via-emerald-900 to-slate-900 dark:from-slate-950 dark:via-emerald-950 dark:to-slate-950 text-white transition-colors">
