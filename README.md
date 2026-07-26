@@ -20,7 +20,7 @@ For students, educators, researchers, and the global Pakistani diaspora, histori
 
 **PakIcons** solves this by offering:
 - A unified, highly accessible hub with **bi-lingual English & Urdu typography** engineered to prevent text overlapping across all viewports (mobile, tablet, desktop).
-- An **AI-powered Historian** that provides concise Q&A, exam study summaries, simplified children's stories, and interactive 3-question quizzes.
+- An **AI-powered Study Center** that provides instant biography summaries, exam study notes, simplified children's stories, and interactive 3-question quizzes.
 - A **Side-by-Side Comparison Engine** to evaluate achievements, timelines, and impacts.
 
 ---
@@ -70,7 +70,7 @@ For students, educators, researchers, and the global Pakistani diaspora, histori
 - 🔍 **Predictive Bilingual Search**: Real-time auto-suggest search supporting English names, Urdu script (`اردو`), category filters, and tags.
 - 📱 **Responsive & Overlap-Free Typography**: Optimized word wrapping (`[overflow-wrap:anywhere]`) ensuring Urdu and English text remain clean without clipping or overlapping on mobile devices.
 - ⚖️ **Personality Comparison Matrix**: Compare two national figures side-by-side across category, era, primary contributions, and historical legacy.
-- 🤖 **AI Historian Integration**: Generates instant answers, structured exam study guides, children's bedtime biographies, and dynamic multiple-choice quizzes.
+- 🤖 **AI Study Center Integration**: Generates live AI biography summaries, structured exam study guides, children's bedtime stories, and dynamic multiple-choice quizzes.
 - 🎨 **Symbolic Visual Canvas**: Non-face symbolic vector art for every icon representing their field (microchips for Arfa Karim, calligraphic art for Gulgee, military honors for Nishtar-e-Haider recipients).
 - 📜 **Quaid & Iqbal Wisdom Carousel**: Curated quotes from Quaid-e-Azam Muhammad Ali Jinnah and Allama Muhammad Iqbal.
 
@@ -81,20 +81,24 @@ For students, educators, researchers, and the global Pakistani diaspora, histori
 PakIcons connects to **Google Gemini 3.6 Flash** via a server-side proxy route (`/api/ai/generate`) to prevent public exposure of API keys.
 
 ### **What the AI Feature Does**
-1. **Ask the Historian**: Provides direct, factual answers about any personality without conversational fluff.
-2. **Study Notes**: Generates bulleted summaries for students preparing for exams or essays.
-3. **Children's Story**: Adapts complex life stories into inspiring, easy-to-understand narratives for young learners.
+1. **Live AI Biography Summary**: Generates detailed, inspiring biography summaries on demand focusing on major contributions and legacy.
+2. **Exam Notes & Study Guides**: Provides bulleted overviews and key exam tips for students.
+3. **Children's Story**: Adapts complex life stories into inspiring, easy-to-understand narratives with moral lessons for young learners.
 4. **Dynamic Quiz Generator**: Constructs a 3-question multiple-choice quiz complete with explanations and correct answer tracking in structured JSON.
 
 ### **System Prompt / Instructions**
 ```text
-You are an expert Pakistani historian and biographer for the PakIcons web application. 
-Provide structured, inspirational, educational, and verified factual details.
+You are an expert Pakistani historian, biographer, and educational scholar for the PakIcons web application. 
+Provide accurate, verified, precise, historically grounded, and educational responses.
 
 [Conditional Behavior]:
-- For Q&A ("ask"):
-  "Keep your answer strictly short, concise, and direct to the point (2-3 sentences max). 
-   Do NOT include any greetings, introductory preamble, or conversational fluff."
+- For Biography Summary ("summary"):
+  "Provide an accurate, inspiring, and well-structured biography summary focusing on 
+   major achievements, national contributions, and lasting legacy."
+
+- For Comparative Analysis ("comparison"):
+  "Provide a clear, balanced, and structured comparative analysis highlighting key 
+   contributions, fields of impact, and historical legacy."
 
 - For Quizzes ("quiz"):
   "Output JSON format for a quiz with 3 multiple choice questions, each having 'question', 
