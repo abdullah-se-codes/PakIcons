@@ -313,5 +313,30 @@ export const MILITARY_HEROES: Personality[] = [
       'Posthumously awarded Sitara-e-Shujaat (Star of Bravery) for unmatched courage and maternal selflessness'
     ],
     awards: [{ year: '2015', title: 'Sitara-e-Shujaat (Posthumous)', organization: 'Government of Pakistan' }]
+  }),
+
+  createPersonality({
+    id: 'aitzaz-hasan',
+    name: 'Aitzaz Hasan Shaheed',
+    urduName: 'اعتزاز حسن شہید',
+    title: 'Teenage National Hero & Sitara-e-Shujaat Recipient',
+    category: 'Military Heroes',
+    lifespan: '1998 – 2014',
+    birthPlace: 'Hangu, Khyber Pakhtunkhwa',
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80',
+    featuredQuote: 'My son made his mother cry, but saved hundreds of mothers from crying for their children.',
+    shortDescription: '15-year-old student from Hangu who sacrificed his life by tackling a suicide bomber outside his school, saving nearly 2,000 students.',
+    fullBio: 'Aitzaz Hasan Shaheed was a 15-year-old schoolboy from Ibrahimzai village in Hangu District, Khyber Pakhtunkhwa. On January 6, 2014, Aitzaz demonstrated remarkable bravery when he spotted a suicide bomber approaching his school during morning assembly, where nearly 2,000 students were gathered. Refusing to let the attacker enter, Aitzaz bravely tackled the bomber outside the school gate, triggering the explosive vest away from his schoolmates. His supreme sacrifice saved hundreds of innocent young lives and immortalized him as a global symbol of courage.',
+    impactDomain: 'National',
+    tags: ['Hangu', 'National Hero', 'Martyr', 'Sitara-e-Shujaat', 'School Hero', 'Young Icon', 'Khyber Pakhtunkhwa'],
+    keyContributions: [
+      'Intercepted and tackled a suicide bomber outside Government High School Ibrahimzai in Hangu on January 6, 2014',
+      'Sacrificed his own life at age 15 to save nearly 2,000 fellow students and teachers gathered for morning assembly',
+      'Posthumously conferred the Sitara-e-Shujaat (Star of Bravery) and honored globally as a national icon of selfless valor'
+    ],
+    awards: [
+      { year: '2014', title: 'Sitara-e-Shujaat (Posthumous)', organization: 'Government of Pakistan' },
+      { year: '2014', title: 'Global Bravery Award', organization: 'International Youth Honors' }
+    ]
   })
 ];
