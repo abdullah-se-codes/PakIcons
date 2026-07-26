@@ -55,29 +55,29 @@ function buildPersonalizedQuiz(data: {
   const secondaryContrib = data.keyContributions[1] || `Key figure in ${data.category}`;
   const topAward = data.awards?.[0]?.title || 'State Commendation & National Honor';
 
-  return [
+  const rawQuestions = [
     {
       id: 1,
       question: `What primary title or honor is ${data.name} celebrated for in Pakistan?`,
       options: [
-        data.title,
         `Chief Pioneer of Modern Maritime Trade`,
+        data.title,
         `Governor of Central Treasury`,
         `Master Architect of Central Asia`
       ],
-      correctAnswer: 0,
+      correctAnswer: 1, // Option B
       explanation: `${data.name} is celebrated across Pakistan as "${data.title}".`
     },
     {
       id: 2,
       question: `Which key achievement or contribution is directly attributed to ${data.name}?`,
       options: [
-        primaryContrib,
         `Drafting the 1909 Maritime Navigation Treaty`,
         `Constructing South Asia's first telegraph network`,
+        primaryContrib,
         `Authoring the 1850 Agricultural Reform Code`
       ],
-      correctAnswer: 0,
+      correctAnswer: 2, // Option C
       explanation: `${data.name} achieved national prominence for: ${primaryContrib}.`
     },
     {
@@ -89,34 +89,58 @@ function buildPersonalizedQuiz(data: {
         data.birthPlace.includes('Peshawar') ? 'Quetta, Balochistan' : 'Peshawar, Khyber Pakhtunkhwa',
         'London, United Kingdom'
       ],
-      correctAnswer: 0,
+      correctAnswer: 0, // Option A
       explanation: `${data.name} was born in ${data.birthPlace}.`
     },
     {
       id: 4,
       question: `Which famous quote reflects the core philosophy and spirit of ${data.name}?`,
       options: [
-        `"${data.featuredQuote}"`,
         `"Peace can only be sustained through total isolation."`,
         `"Commerce is the sole metric of human progress."`,
-        `"History belongs strictly to those who conquer territory."`
+        `"History belongs strictly to those who conquer territory."`,
+        `"${data.featuredQuote}"`
       ],
-      correctAnswer: 0,
+      correctAnswer: 3, // Option D
       explanation: `"${data.featuredQuote}" expresses the central principles of ${data.name}.`
     },
     {
       id: 5,
       question: `Which prestigious recognition or impact domain highlights the legacy of ${data.name}?`,
       options: [
-        `${topAward} (${secondaryContrib})`,
         `Medal of Commercial Expansion`,
+        `${topAward} (${secondaryContrib})`,
         `Order of Maritime Navigation`,
         `Cross of Industrial Automation`
       ],
-      correctAnswer: 0,
+      correctAnswer: 1, // Option B
       explanation: `${data.name}'s enduring legacy is recognized through ${topAward} in ${data.category}.`
     }
   ];
+
+  return rawQuestions;
+}
+
+export function ensureDiverseOptionPositions<T extends { question: string; options: string[]; correctAnswer: number; explanation?: string }>(questions: T[]): T[] {
+  if (!questions || questions.length === 0) return [];
+  return questions.map((q, idx) => {
+    const targetPos = idx % Math.max(1, q.options.length);
+    if (q.correctAnswer === targetPos || q.correctAnswer < 0 || q.correctAnswer >= q.options.length) {
+      return {
+        ...q,
+        correctAnswer: Math.max(0, Math.min(q.correctAnswer, q.options.length - 1))
+      };
+    }
+    const newOptions = [...q.options];
+    const correctVal = newOptions[q.correctAnswer];
+    newOptions.splice(q.correctAnswer, 1);
+    newOptions.splice(targetPos, 0, correctVal);
+    return {
+      ...q,
+      options: newOptions,
+      correctAnswer: targetPos
+    };
+  });
 }
 
 export function createPersonality(data: {
