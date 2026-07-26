@@ -62,7 +62,7 @@ app.post("/api/ai/generate", async (req, res) => {
     } else if (type === "comparison") {
       systemInstruction += " Provide a clear, balanced, and structured comparative analysis highlighting key contributions, fields of impact, and historical legacy.";
     } else if (type === "quiz") {
-      systemInstruction += " Output valid JSON format for a quiz with 3 multiple choice questions, each having 'question', 'options' (array of 4 strings), 'correctAnswer' (0-indexed integer), and 'explanation' (string). Ensure all questions and answers are historically accurate.";
+      systemInstruction += " Output valid JSON format for a quiz with 5 multiple choice questions, each having 'question', 'options' (array of 4 strings), 'correctAnswer' (0-indexed integer), and 'explanation' (string). Ensure all questions and answers are historically accurate.";
     }
 
     const response = await ai.models.generateContent({
