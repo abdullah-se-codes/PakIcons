@@ -21,6 +21,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'First Governor-General of Pakistan',
       'United the Muslim population of South Asia through constitutional law'
     ],
+    milestones: [
+      { year: '1876', title: 'Birth in Karachi', description: 'Born in Wazir Mansion, Karachi, embarking on an early journey of law and education.' },
+      { year: '1896', title: 'Called to the Bar at Lincoln\'s Inn', description: 'Became the youngest Indian student admitted to Lincoln\'s Inn in London to practice law.' },
+      { year: '1913', title: 'Joined All-India Muslim League', description: 'Assumed pivotal leadership in advocating constitutional rights for South Asian Muslims.' },
+      { year: '1940', title: 'Historic Lahore Resolution', description: 'Presided over the Lahore Session demanding an independent sovereign state for Muslims.' },
+      { year: '1947', title: 'Independence & First Governor-General', description: 'Founded Pakistan on August 14, 1947, taking oath as the nation\'s first Governor-General.' }
+    ],
     awards: [{ year: '1947', title: 'Father of the Nation', organization: 'Nation of Pakistan' }]
   }),
 
@@ -42,6 +49,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'Co-founded All Pakistan Women\'s Association (APWA)',
       'Key strategist alongside Muhammad Ali Jinnah during the Pakistan Movement',
       'Challenged military dictatorship in the 1965 presidential elections'
+    ],
+    milestones: [
+      { year: '1893', title: 'Birth in Karachi', description: 'Born in Karachi, growing up with a passion for education and social empowerment.' },
+      { year: '1923', title: 'Dental Surgery Pioneer', description: 'Graduated from Dr. R. Ahmed Dental College in Calcutta, opening a clinic in Bombay.' },
+      { year: '1947', title: 'Co-Founded APWA & Refugee Relief', description: 'Established All Pakistan Women\'s Association to spearhead post-independence rehabilitation.' },
+      { year: '1965', title: 'Presidential Democratic Campaign', description: 'Stood as joint opposition candidate demanding restoration of democratic freedoms.' },
+      { year: '1967', title: 'Enduring Legacy as Madar-e-Millat', description: 'Passed away in Karachi, revered universally as the Mother of the Nation.' }
     ]
   }),
 
@@ -63,6 +77,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'Delivered 1930 Allahabad Address articulating the two-nation concept',
       'Authored timeless poetry books Bang-e-Dra, Bal-e-Jibril, Zarb-e-Kaleem, Asrar-e-Khudi',
       'Knighted by the British Crown in 1923 for literary greatness'
+    ],
+    milestones: [
+      { year: '1877', title: 'Birth in Sialkot', description: 'Born in Sialkot, immersing early in Islamic literature, Arabic, and Persian poetry.' },
+      { year: '1908', title: 'PhD from Munich & Bar at Lincoln\'s Inn', description: 'Completed doctoral thesis on Persian metaphysics and called to the Bar in London.' },
+      { year: '1923', title: 'Knighted for Poetic Mastery', description: 'Knighted by the British Crown in recognition of extraordinary philosophical poetry.' },
+      { year: '1930', title: 'Historic Allahabad Address', description: 'Articulated the definitive vision for a separate independent Muslim homeland in South Asia.' },
+      { year: '1938', title: 'Spiritual Legacy', description: 'Passed away in Lahore, leaving timeless poetic masterpieces Bang-e-Dra and Bal-e-Jibril.' }
     ]
   }),
 
@@ -84,6 +105,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'Created the world\'s largest volunteer ambulance service (Guinness World Record)',
       'Rescued and placed over 20,000 abandoned infants via cradle drop boxes',
       'Lenin Peace Prize and Ramon Magsaysay Award recipient'
+    ],
+    milestones: [
+      { year: '1928', title: 'Birth in Bantva', description: 'Born in Gujarat, learning compassion from caring for his paralyzed mother.' },
+      { year: '1951', title: 'First Free Dispensary & Old Van', description: 'Purchased a small van in Karachi, launching a single-handed emergency care operation.' },
+      { year: '1980', title: 'Cradle Movement & Orphan Network', description: 'Placed Jhoolas (cradles) outside Edhi centers, rescuing over 20,000 infants.' },
+      { year: '1989', title: 'Conferred Nishan-e-Imtiaz', description: 'Awarded Pakistan\'s highest civilian honor for building the world\'s largest ambulance fleet.' },
+      { year: '2016', title: 'State Funeral & Global Honor', description: 'Passed away in Karachi, honored with a rare state funeral for unparalleled humanitarianism.' }
     ],
     awards: [{ year: '1989', title: 'Nishan-e-Imtiaz', organization: 'Government of Pakistan' }]
   }),
