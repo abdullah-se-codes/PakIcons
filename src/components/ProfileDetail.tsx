@@ -346,22 +346,32 @@ export const ProfileDetail: React.FC<ProfileDetailProps> = ({
 
           {/* Milestone Timeline */}
           <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 shadow-lg">
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-emerald-400" />
-              Milestone Timeline
-            </h3>
+            <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
+              <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                <Calendar className="w-5 h-5 text-emerald-400" />
+                Personalized Life & Impact Timeline
+              </h3>
+              <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-800/60">
+                {personality.milestones.length} Key Life Phases
+              </span>
+            </div>
 
             <div className="relative pl-6 space-y-6 border-l-2 border-emerald-800/60">
               {personality.milestones.map((m, idx) => (
                 <div key={idx} className="relative group">
                   {/* Timeline Dot */}
-                  <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-slate-900 group-hover:scale-125 transition-transform" />
+                  <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-slate-900 group-hover:scale-125 group-hover:bg-emerald-400 transition-all duration-300 shadow-md shadow-emerald-500/20" />
 
-                  <div className="bg-slate-950/80 p-4 rounded-2xl border border-slate-800 space-y-1">
-                    <span className="px-2.5 py-0.5 rounded-md text-xs font-extrabold bg-emerald-950 text-emerald-300 border border-emerald-800/50 inline-block">
-                      {m.year}
-                    </span>
-                    <h4 className="text-sm font-bold text-white">{m.title}</h4>
+                  <div className="bg-slate-950/80 p-4.5 rounded-2xl border border-slate-800/80 group-hover:border-emerald-700/50 group-hover:bg-slate-950 transition-all duration-300 space-y-2">
+                    <div className="flex items-center justify-between flex-wrap gap-2">
+                      <span className="px-2.5 py-0.5 rounded-md text-xs font-black bg-emerald-950 text-emerald-300 border border-emerald-800/50 inline-block tracking-wide">
+                        {m.year}
+                      </span>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                        Phase {idx + 1} of {personality.milestones.length}
+                      </span>
+                    </div>
+                    <h4 className="text-sm font-bold text-white group-hover:text-emerald-200 transition-colors">{m.title}</h4>
                     <p className="text-xs text-slate-300 leading-relaxed">{m.description}</p>
                   </div>
                 </div>
