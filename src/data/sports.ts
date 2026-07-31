@@ -22,6 +22,13 @@ export const SPORTS_CHAMPIONS: Personality[] = [
       '6-time World Open Champion',
       'President of the World Squash Federation (2002–2008)'
     ],
+    milestones: [
+      { year: '1963', title: 'Birth in Karachi', description: 'Born into a distinguished squash dynasty, overcoming physical frailty as a child through intense discipline.' },
+      { year: '1979', title: 'World Amateur Champion at 15', description: 'Became the youngest winner of the World Amateur Squash Championship at age 15.' },
+      { year: '1981', title: 'Start of Unbeaten 555-Match Streak', description: 'Defeated Geoff Hunt to become youngest World Open Champion, commencing a 5-year unbeaten streak.' },
+      { year: '1991', title: '10th Consecutive British Open', description: 'Claimed a 10th consecutive British Open title, a Guinness World Record unmatched in racket sports.' },
+      { year: '2002', title: 'World Squash Federation President', description: 'Elected President of the World Squash Federation, guiding international squash governance.' }
+    ],
     awards: [{ year: '1984', title: 'Hilal-e-Imtiaz', organization: 'Government of Pakistan' }]
   }),
 
@@ -86,6 +93,13 @@ export const SPORTS_CHAMPIONS: Personality[] = [
       '22nd Prime Minister of Pakistan (2018–2022)',
       'Built Shaukat Khanum Memorial Cancer Hospital providing 75% free patient care',
       'Founded Namal Knowledge City University in Mianwali'
+    ],
+    milestones: [
+      { year: '1952', title: 'Birth in Lahore', description: 'Born in Lahore, studying at Aitchison College and Oxford University.' },
+      { year: '1971', title: 'Test Debut for Pakistan', description: 'Made international Test debut at age 18 against England at Edgbaston.' },
+      { year: '1992', title: '1992 Cricket World Cup Glory', description: 'Captained Pakistan to historic victory in the ICC Cricket World Cup at the Melbourne Cricket Ground.' },
+      { year: '1994', title: 'Shaukat Khanum Cancer Hospital', description: 'Built Pakistan\'s first state-of-the-art cancer hospital offering free treatment to underprivileged patients.' },
+      { year: '2018', title: '22nd Prime Minister of Pakistan', description: 'Elected Prime Minister of Pakistan, introducing Sehat Sahulat card healthcare reforms.' }
     ]
   }),
 
@@ -192,6 +206,13 @@ export const SPORTS_CHAMPIONS: Personality[] = [
       'Ranked No. 1 ICC ODI Batsman for over 1000 days',
       'Fastest player to 19 ODI centuries in world cricket history',
       'Led Pakistan to ICC T20 World Cup 2022 Final'
+    ],
+    milestones: [
+      { year: '1994', title: 'Birth in Lahore', description: 'Born in Lahore, serving as a ball boy at Gaddafi Stadium while perfecting his classic strokeplay.' },
+      { year: '2015', title: 'International Debut', description: 'Made ODI debut against Zimbabwe in Lahore, scoring a fluent half-century.' },
+      { year: '2016', title: 'Three Consecutive ODI Centuries', description: 'Smashed 3 back-to-back ODI centuries against West Indies in UAE, announcing world-class genius.' },
+      { year: '2021', title: 'Ranked ICC World No. 1 ODI Batsman', description: 'Surpassed top global stars to achieve No. 1 ICC ODI batsman ranking, holding it for over 1,000 days.' },
+      { year: '2023', title: 'Conferred Sitara-e-Imtiaz', description: 'Became the youngest cricketer in Pakistan history to be awarded the Sitara-e-Imtiaz.' }
     ]
   }),
 
