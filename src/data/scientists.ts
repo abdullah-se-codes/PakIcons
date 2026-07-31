@@ -104,6 +104,13 @@ export const SCIENTISTS_AND_DOCTORS: Personality[] = [
       'Controlled leprosy across Pakistan ahead of WHO targets',
       'Honored with state funeral in Pakistan'
     ],
+    milestones: [
+      { year: '1929', title: 'Birth in Leipzig', description: 'Born in Leipzig, Germany, pursuing medicine at the University of Mainz.' },
+      { year: '1960', title: 'Arrival in Karachi', description: 'Arrived in Karachi, visiting leprosy patient colonies in slums and establishing MALC clinic.' },
+      { year: '1996', title: 'WHO Leprosy Eradication Milestone', description: 'Led national campaign resulting in WHO declaring leprosy controlled in Pakistan ahead of schedule.' },
+      { year: '2006', title: 'Hilal-i-Pakistan Honor', description: 'Conferred Hilal-i-Pakistan for 46 years of selfless medical service to marginalized patients.' },
+      { year: '2017', title: 'State Funeral & Legacy', description: 'Passed away in Karachi, honored with a rare state funeral at St. Patrick\'s Cathedral.' }
+    ],
     awards: [{ year: '1989', title: 'Nishan-e-Quaid-e-Azam', organization: 'Government of Pakistan' }]
   }),
 
@@ -125,6 +132,13 @@ export const SCIENTISTS_AND_DOCTORS: Personality[] = [
       'Founded SIUT, performing thousands of free kidney transplants',
       'Pioneered ethical organ transplantation law in Pakistan',
       'Ramon Magsaysay Award Laureate (1998)'
+    ],
+    milestones: [
+      { year: '1938', title: 'Birth in Kalanpur', description: 'Born in British India, earning MBBS from Dow Medical College Karachi and surgical training in UK.' },
+      { year: '1971', title: '8-Bed Urology Ward at Civil Hospital', description: 'Started an 8-bed urology ward at Civil Hospital Karachi delivering free patient care.' },
+      { year: '1991', title: 'Autonomous SIUT Charter', description: 'Expanded ward into the Sindh Institute of Urology and Transplantation (SIUT).' },
+      { year: '1998', title: 'Ramon Magsaysay Award', description: 'Awarded Ramon Magsaysay Award for Public Service in medical healthcare.' },
+      { year: '2018', title: '5,000+ Free Transplants Milestone', description: 'SIUT completed over 5,000 free organ transplants treating 1.5 million poor patients annually.' }
     ]
   }),
 
@@ -146,6 +160,13 @@ export const SCIENTISTS_AND_DOCTORS: Personality[] = [
       'Core contributor to LIGO team detecting Einstein\'s predicted gravitational waves',
       'Appointed Dean of Science at MIT (2020)',
       'MacArthur "Genius Grant" Fellow (2010)'
+    ],
+    milestones: [
+      { year: '1968', title: 'Birth in Lahore', description: 'Born in Lahore, raised in Karachi, attending Convent of Jesus and Mary.' },
+      { year: '1997', title: 'PhD in Physics from MIT', description: 'Completed PhD at MIT developing quantum non-demolition measurement techniques.' },
+      { year: '2010', title: 'MacArthur Genius Fellow', description: 'Awarded prestigious MacArthur Fellowship for breakthroughs in optical instrumentation.' },
+      { year: '2015', title: 'Gravitational Wave Discovery', description: 'Co-detected Einstein\'s predicted gravitational waves at LIGO, proving cosmic ripple existence.' },
+      { year: '2020', title: 'Dean of Science at MIT', description: 'Appointed Dean of the School of Science at Massachusetts Institute of Technology (MIT).' }
     ]
   }),
 
@@ -167,6 +188,13 @@ export const SCIENTISTS_AND_DOCTORS: Personality[] = [
       'World\'s youngest Microsoft Certified Professional at age 9',
       'Represented Pakistan at international tech summits in Barcelona and Seattle',
       'Awarded Fatima Jinnah Gold Medal and President\'s Pride of Performance'
+    ],
+    milestones: [
+      { year: '1995', title: 'Birth in Faisalabad', description: 'Born in Ram Diwali, Faisalabad, showing extraordinary curiosity for computing from age 5.' },
+      { year: '2004', title: 'World Youngest MCP at Age 9', description: 'Passed Microsoft certification exam, becoming the youngest Microsoft Certified Professional in the world.' },
+      { year: '2005', title: 'Invited by Bill Gates', description: 'Personally invited by Bill Gates to Microsoft headquarters in Redmond, Washington.' },
+      { year: '2006', title: 'TechEd Conference Barcelona', description: 'Represented Pakistan as keynote delegate at Microsoft TechEd conference in Barcelona.' },
+      { year: '2012', title: 'Legacy & Pride of Performance', description: 'Tragically passed away in Lahore at age 16; honored with Fatima Jinnah Gold Medal and Pride of Performance.' }
     ]
   }),
 
@@ -188,6 +216,13 @@ export const SCIENTISTS_AND_DOCTORS: Personality[] = [
       'Founded Plan9 tech incubator, starting Pakistan\'s startup ecosystem',
       'Digitized public services and epidemic tracking in Punjab',
       'MIT TR35 Top Innovator under 35'
+    ],
+    milestones: [
+      { year: '1979', title: 'Birth in Lahore', description: 'Born in Lahore, completing PhD in Computer Science at University of Cambridge.' },
+      { year: '2011', title: 'MIT TR35 Top Innovator', description: 'Named among world\'s top 35 innovators under 35 by MIT Technology Review.' },
+      { year: '2012', title: 'Founded Plan9 Incubator', description: 'Launched Plan9, Pakistan\'s pioneer technology startup incubator, spawning hundreds of tech companies.' },
+      { year: '2014', title: 'Chairman PITB Governance Digitization', description: 'Digitized public health, dengue surveillance, citizen feedback, and education portals across Punjab.' },
+      { year: '2023', title: 'Federal Minister of IT', description: 'Appointed Federal Minister for Information Technology and Telecommunication.' }
     ]
   }),
 
@@ -208,6 +243,12 @@ export const SCIENTISTS_AND_DOCTORS: Personality[] = [
     keyContributions: [
       'First scientist to successfully integrate brain neurons with a silicon microchip',
       'Professor at University of Calgary Department of Cell Biology'
+    ],
+    milestones: [
+      { year: '1961', title: 'Birth in Rawalpindi', description: 'Born in Rawalpindi, graduating from University of Agriculture Faisalabad before earning PhD in Neurophysiology.' },
+      { year: '2004', title: 'First Brain-Silicon Microchip', description: 'Became first scientist in history to connect brain neurons directly to a silicon microchip at University of Calgary.' },
+      { year: '2010', title: 'Department Chair at Calgary', description: 'Appointed Head of Cell Biology and Anatomy at University of Calgary Cumming School of Medicine.' },
+      { year: '2017', title: 'Tamgha-e-Imtiaz Conferred', description: 'Awarded Tamgha-e-Imtiaz by Government of Pakistan for pioneering bio-tech innovation.' }
     ]
   }),
 
@@ -229,6 +270,13 @@ export const SCIENTISTS_AND_DOCTORS: Personality[] = [
       'Isolated Ajmaline and anti-hypertensive alkaloids from Rauwolfia',
       'Founded PCSIR (Pakistan Council of Scientific and Industrial Research)',
       'Founded HEJ Research Institute of Chemistry'
+    ],
+    milestones: [
+      { year: '1897', title: 'Birth in Suahedpur', description: 'Born in British India, studying chemistry at Frankfurt University Germany.' },
+      { year: '1931', title: 'Isolation of Ajmaline', description: 'Isolated Ajmaline anti-arrhythmic alkaloid from Rauwolfia serpentina plant.' },
+      { year: '1953', title: 'Founded PCSIR', description: 'Founded Pakistan Council of Scientific and Industrial Research (PCSIR).' },
+      { year: '1961', title: 'Fellow of Royal Society (FRS)', description: 'Elected Fellow of the Royal Society (FRS) London.' },
+      { year: '1967', title: 'Founded HEJ Institute of Chemistry', description: 'Established HEJ Research Institute of Chemistry at Karachi University, building a premier center for chemical research.' }
     ]
   })
 ];
