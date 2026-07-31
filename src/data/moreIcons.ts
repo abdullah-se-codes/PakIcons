@@ -21,6 +21,13 @@ export const MORE_ICONS: Personality[] = [
       'First female Lieutenant General in Pakistan Army history',
       'First female Surgeon General of Pakistan Armed Forces',
       'Hilal-e-Imtiaz (Military) recipient'
+    ],
+    milestones: [
+      { year: '1965', title: 'Birth in Swabi', description: 'Born in Panjpir, Swabi, KPK into a military family, studying at Presentation Convent Girls High School Rawalpindi.' },
+      { year: '1985', title: 'Commission in Army Medical Corps', description: 'Graduated from Army Medical College Rawalpindi and commissioned into the Pakistan Army Medical Corps.' },
+      { year: '2017', title: 'Promoted to Major General', description: 'Promoted to 2-star Major General, becoming the 3rd female officer in Pakistan Army history to reach this rank.' },
+      { year: '2020', title: 'First Female 3-Star Lieutenant General', description: 'Promoted to Lieutenant General, making history as the first female 3-star General and Surgeon General.' },
+      { year: '2021', title: 'Hilal-e-Imtiaz & Colonel Commandant', description: 'Conferred Hilal-e-Imtiaz (Military) and appointed Colonel Commandant of Army Medical Corps.' }
     ]
   }),
 
@@ -41,6 +48,13 @@ export const MORE_ICONS: Personality[] = [
     keyContributions: [
       'Awarded both Hilal-e-Jurat and Sitara-e-Jurat for extraordinary aerial combat bravery',
       'Downed multiple enemy Hunter fighter aircraft in dogfights'
+    ],
+    milestones: [
+      { year: '1935', title: 'Birth in Rajshahi', description: 'Born in Rajshahi, East Pakistan, moving to Sargodha to pursue fighter aviation in PAF.' },
+      { year: '1953', title: 'Commissioned in PAF', description: 'Graduated from RPAF College Risalpur, commissioned as a fighter pilot in Pakistan Air Force.' },
+      { year: '1965 (Sept 1)', title: 'Sitara-e-Jurat in Chamb Sector', description: 'Shot down two enemy Vampire fighter jets over Chamb sector, awarded Sitara-e-Jurat.' },
+      { year: '1965 (Sept 6)', title: 'Halwara Airbase Raid & Jammed Guns', description: 'Led 3-aircraft raid over Halwara; when his guns jammed, he flew decoy maneuvers protecting wingmen before falling.' },
+      { year: '1965', title: 'Posthumous Hilal-e-Jurat', description: 'Posthumously awarded Hilal-e-Jurat, becoming one of PAF\'s most revered air heroes.' }
     ]
   }),
 
@@ -62,6 +76,13 @@ export const MORE_ICONS: Personality[] = [
       'Executed high-risk low-level bombing strikes on Amritsar radar during 1965 war',
       'Awarded Sitara-e-Jurat and Tamgha-e-Jurat',
       'Principal of St. Anthony\'s High School Lahore'
+    ],
+    milestones: [
+      { year: '1941', title: 'Birth in Dalwal', description: 'Born in Dalwal in the Salt Range of Punjab into a distinguished Roman Catholic family.' },
+      { year: '1958', title: 'Joined PAF Academy', description: 'Enrolled in PAF Academy Risalpur, specializing in F-86 Sabre jet aerial combat.' },
+      { year: '1965', title: 'Amritsar Radar Strike & Sitara-e-Jurat', description: 'Executed low-altitude strike destroying Amritsar radar complex; awarded Sitara-e-Jurat.' },
+      { year: '1971', title: '1971 Air Operations & Tamgha-e-Jurat', description: 'Flew deep-strike combat missions against enemy airfields, awarded Tamgha-e-Jurat.' },
+      { year: '1986', title: 'Principal St. Anthony\'s & Human Rights', description: 'Appointed Principal of St. Anthony\'s High School Lahore, mentoring generations of students.' }
     ]
   }),
 
@@ -84,6 +105,13 @@ export const MORE_ICONS: Personality[] = [
       'First Pakistani woman to summit Mount Everest (2013)',
       'First Pakistani woman to summit K2 (2022)',
       'First Pakistani to summit all Seven Summits across seven continents'
+    ],
+    milestones: [
+      { year: '1990', title: 'Birth in Shimshal', description: 'Born in Shimshal, Hunza, Gilgit-Baltistan, trained in high-altitude climbing by her brother Mirza Ali.' },
+      { year: '2010', title: 'First Ascent of Chashkin Sar', description: 'Summited virgin peak Chashkin Sar (6,400m) in Hunza, renamed Samina Peak in her honor.' },
+      { year: '2013 (May 19)', title: 'Mount Everest Historic Summit', description: 'Became the first Pakistani woman to scale Mount Everest (8,848m) at age 22.' },
+      { year: '2014', title: 'Seven Summits Completion', description: 'Conquered the highest peaks across all seven continents, becoming the first Pakistani to achieve the Seven Summits.' },
+      { year: '2022 (July 22)', title: 'K2 Historic Ascent', description: 'Successfully summited K2 (8,611m), becoming the first Pakistani woman atop the Savage Mountain.' }
     ]
   }),
 
@@ -105,6 +133,13 @@ export const MORE_ICONS: Personality[] = [
       'First Pakistani woman to summit 11 peaks above 8,000 meters',
       'First Pakistani woman to summit Annapurna and Lhotse',
       'Awarded Sitara-e-Imtiaz in 2023'
+    ],
+    milestones: [
+      { year: '1986', title: 'Birth in Rawalpindi', description: 'Born in Rawalpindi, pursuing aerospace engineering and banking before embarking on high-altitude climbing.' },
+      { year: '2021', title: 'Gasherbrum II Ascent', description: 'Summited Gasherbrum II (8,035m) shortly after becoming a mother, launching her professional climbing career.' },
+      { year: '2022', title: 'K2 & Gasherbrum I Double Summit', description: 'Scaled K2 (8,611m) and Gasherbrum I (8,080m) in a single climbing season.' },
+      { year: '2023', title: '11th Eight-Thousander Summit', description: 'Summited Mount Everest, Lhotse, Annapurna, and Nanga Parbat, becoming the first Pakistani woman atop 11 peaks over 8,000m.' },
+      { year: '2023', title: 'Conferred Sitara-e-Imtiaz', description: 'Awarded Sitara-e-Imtiaz by the President of Pakistan for global mountaineering excellence.' }
     ]
   }),
 
@@ -126,6 +161,13 @@ export const MORE_ICONS: Personality[] = [
       'Scored 37-ball ODI century (world record for 17 years)',
       'Player of the Match in 2009 T20 World Cup Final & Semifinal',
       'Founded Shahid Afridi Foundation for charity'
+    ],
+    milestones: [
+      { year: '1977', title: 'Birth in Khyber', description: 'Born in Khyber Agency, FATA, showing ferocious bowling and power-hitting talent from early youth.' },
+      { year: '1996 (Oct 4)', title: '37-Ball World Record ODI Century', description: 'Smashed 37-ball ODI century vs Sri Lanka in Nairobi at age 16, setting a world record that stood for 17 years.' },
+      { year: '2009', title: '2009 T20 World Cup Victory', description: 'Player of the Match in both semi-final and final at Lord\'s, steering Pakistan to ICC T20 World Cup glory.' },
+      { year: '2011', title: 'World Cup Semi-Final Captain', description: 'Captained Pakistan to 2011 World Cup semi-final, finishing as joint top wicket-taker (21 wickets).' },
+      { year: '2014', title: 'Shahid Afridi Foundation', description: 'Established SAF charity providing healthcare, clean water, and education across Pakistan.' }
     ]
   }),
 
@@ -146,6 +188,13 @@ export const MORE_ICONS: Personality[] = [
     keyContributions: [
       'Official world record for fastest delivery in cricket history (161.3 km/h / 100.23 mph)',
       'Took 444 international wickets across Tests and ODIs'
+    ],
+    milestones: [
+      { year: '1975', title: 'Birth in Rawalpindi', description: 'Born in Morgah, Rawalpindi, overcoming flat feet in childhood to develop explosive fast bowling mechanics.' },
+      { year: '1997', title: 'Test Debut for Pakistan', description: 'Made international Test debut against West Indies at Rawalpindi Cricket Stadium.' },
+      { year: '1999', title: 'Kolkata Test Double Strike', description: 'Clean bowled Rahul Dravid and Sachin Tendulkar on back-to-back deliveries at Eden Gardens Kolkata.' },
+      { year: '2003 (Feb 22)', title: '161.3 km/h World Record Delivery', description: 'Clocked official 161.3 km/h (100.23 mph) fast delivery vs England, setting cricket\'s all-time speed record.' },
+      { year: '2011', title: 'Retirement & Legacy', description: 'Retired from international cricket after capturing 444 wickets across Tests and ODIs.' }
     ]
   }),
 
@@ -938,6 +987,13 @@ export const MORE_ICONS: Personality[] = [
       '17th Chief of Army Staff of the Pakistan Army',
       'Awarded Sword of Honour from OTS Mangla',
       'Served as Director-General of Inter-Services Intelligence (ISI) and Military Intelligence (MI)'
+    ],
+    milestones: [
+      { year: '1965', title: 'Birth in Rawalpindi', description: 'Born in Dheri Hassanabad, Rawalpindi into a respected family, memorizing the Holy Quran at a young age.' },
+      { year: '1986', title: 'Sword of Honour & Commission', description: 'Graduated from Officers Training School (OTS) Mangla with the prestigious Sword of Honour, commissioned into the 23rd Battalion of the Frontier Force Regiment.' },
+      { year: '2017', title: 'Director-General Military Intelligence (DG MI)', description: 'Promoted to Major General and appointed DG MI, managing military intelligence operations.' },
+      { year: '2018', title: 'Director-General ISI & Lt. General', description: 'Promoted to Lieutenant General and assumed office as Director-General of Inter-Services Intelligence (DG ISI).' },
+      { year: '2022 (Nov 24)', title: '17th Chief of Army Staff (COAS)', description: 'Appointed 17th Chief of Army Staff of the Pakistan Army and awarded Nishan-e-Imtiaz (Military).' }
     ]
   }),
 
@@ -959,6 +1015,13 @@ export const MORE_ICONS: Personality[] = [
       'Successfully summited K2 twice, including landmark ascent without supplementary oxygen',
       'Scaled Mount Everest, Nanga Parbat, Annapurna, and Manaslu without oxygen support',
       'Pioneered safety and high-altitude rescue operations in the Karakoram range'
+    ],
+    milestones: [
+      { year: '1998', title: 'Birth in Skardu', description: 'Born in Sadpara village near Skardu, Gilgit-Baltistan, learning high-altitude mountaineering from his father Ali Sadpara.' },
+      { year: '2019', title: 'First K2 Ascent at Age 20', description: 'Summited K2 (8,611m) alongside his father Ali Sadpara at age 20.' },
+      { year: '2021', title: 'Winter K2 Search Mission', description: 'Led winter search and recovery mission on K2 honoring his late father Ali Sadpara.' },
+      { year: '2022', title: 'Oxygen-Free K2 Summit', description: 'Successfully scaled K2 without supplementary oxygen, setting a landmark record for Pakistan.' },
+      { year: '2023', title: 'Summited Everest & Nanga Parbat Oxygen-Free', description: 'Achieved oxygen-free ascents of Mount Everest, Nanga Parbat, Annapurna, and Manaslu in a single season.' }
     ]
   })
 ];
