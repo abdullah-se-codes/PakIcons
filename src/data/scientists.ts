@@ -22,6 +22,13 @@ export const SCIENTISTS_AND_DOCTORS: Personality[] = [
       'Founded International Centre for Theoretical Physics (ICTP) in Trieste',
       'Founded SUPARCO, Pakistan\'s space exploration agency'
     ],
+    milestones: [
+      { year: '1926', title: 'Birth in Jhang', description: 'Born in Jhang, setting record marks at Government College Lahore at age 14.' },
+      { year: '1951', title: 'Cambridge Doctorate & Smith\'s Prize', description: 'Awarded PhD in Theoretical Physics from Cambridge for fundamental electrodynamics research.' },
+      { year: '1961', title: 'Founded SUPARCO Space Agency', description: 'Advised government to establish Pakistan\'s Space and Upper Atmosphere Research Commission.' },
+      { year: '1964', title: 'Founded ICTP in Trieste', description: 'Established International Centre for Theoretical Physics to foster scientific talent worldwide.' },
+      { year: '1979', title: 'Nobel Prize in Physics', description: 'Awarded Nobel Prize in Physics for unifying electromagnetic and weak nuclear fundamental forces.' }
+    ],
     awards: [{ year: '1979', title: 'Nobel Prize in Physics', organization: 'Nobel Committee' }]
   }),
 
@@ -43,6 +50,13 @@ export const SCIENTISTS_AND_DOCTORS: Personality[] = [
       'Established Kahuta Research Laboratories (KRL)',
       'Pioneered gas centrifuge technology for uranium enrichment in Pakistan',
       'Awarded Nishan-e-Imtiaz twice for national defense service'
+    ],
+    milestones: [
+      { year: '1936', title: 'Birth in Bhopal', description: 'Born in Bhopal, later migrating to Karachi to pursue science and metallurgy.' },
+      { year: '1972', title: 'Metallurgical Doctorate in Leuven', description: 'Completed doctorate in metallurgical engineering in Belgium, joining URENCO in Holland.' },
+      { year: '1976', title: 'Established KRL Kahuta', description: 'Returned to Pakistan to establish Kahuta Research Laboratories for uranium enrichment.' },
+      { year: '1998', title: 'Strategic Deterrence Success', description: 'Delivered sovereign nuclear deterrence capability for national territorial defense.' },
+      { year: '2021', title: 'Double Nishan-e-Imtiaz Legacy', description: 'Passed away in Islamabad, honored nationwide as Mohsin-e-Pakistan (Benefactor of Pakistan).' }
     ],
     awards: [
       { year: '1996', title: 'Nishan-e-Imtiaz', organization: 'Government of Pakistan' },
