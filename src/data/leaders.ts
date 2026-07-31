@@ -134,6 +134,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'Managed adoption services for over 20,000 orphaned children',
       'Ramon Magsaysay Award Laureate (1986)',
       'Mother Teresa Memorial International Award (2015)'
+    ],
+    milestones: [
+      { year: '1947', title: 'Birth in Bantva', description: 'Born in Bantva, Gujarat, migrating with her family to Karachi after Partition.' },
+      { year: '1965', title: 'Joined Edhi Foundation', description: 'Trained as a nurse and joined Abdul Sattar Edhi in expanding free medical dispensaries.' },
+      { year: '1986', title: 'Ramon Magsaysay Award', description: 'Awarded the Ramon Magsaysay Award for Public Service alongside Abdul Sattar Edhi.' },
+      { year: '2015', title: 'Mother Teresa Award', description: 'Conferred Mother Teresa Memorial International Award for extraordinary child welfare and shelter work.' },
+      { year: '2022', title: 'State Honor & Legacy', description: 'Passed away in Karachi, remembered as "Mother to Millions" for placing over 20,000 orphans into loving homes.' }
     ]
   }),
 
@@ -156,6 +163,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'Co-founded Malala Fund investing millions in girls education worldwide',
       'Graduated from Oxford University in Philosophy, Politics and Economics (PPE)'
     ],
+    milestones: [
+      { year: '1997', title: 'Birth in Mingora, Swat', description: 'Born in Mingora, Swat Valley, encouraged by her father Ziauddin Yousafzai to pursue education.' },
+      { year: '2009', title: 'BBC Urdu Diary & Activism', description: 'Authored BBC Urdu blog under pseudonym Gul Makai describing girls\' right to education under Taliban oppression.' },
+      { year: '2012', title: 'Attack & Global Survival Surge', description: 'Survived targeted attack in Swat, receiving emergency treatment in UK and becoming global symbol of courage.' },
+      { year: '2014', title: 'Youngest Nobel Peace Prize Winner', description: 'Awarded the Nobel Peace Prize at age 17, becoming the youngest laureate in history.' },
+      { year: '2020', title: 'Oxford Graduation & Malala Fund', description: 'Graduated from Oxford University and expanded Malala Fund educational grants globally.' }
+    ],
     awards: [{ year: '2014', title: 'Nobel Peace Prize', organization: 'Nobel Committee' }]
   }),
 
@@ -177,6 +191,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'Co-founded Human Rights Commission of Pakistan (HRCP)',
       'First female President of the Supreme Court Bar Association of Pakistan',
       'Right Livelihood Award and UN Human Rights Prize recipient'
+    ],
+    milestones: [
+      { year: '1952', title: 'Birth in Lahore', description: 'Born in Lahore into a family of political activists and public servants.' },
+      { year: '1980', title: 'Co-Founded AGHS Legal Aid Cell', description: 'Established Pakistan\'s first all-women legal aid firm advocating for vulnerable women and minority rights.' },
+      { year: '1987', title: 'Co-Founded HRCP', description: 'Co-founded the Human Rights Commission of Pakistan (HRCP), serving as its founding Secretary General.' },
+      { year: '2010', title: 'First Female SCBA President', description: 'Elected first female President of the Supreme Court Bar Association of Pakistan.' },
+      { year: '2018', title: 'UN Human Rights Prize', description: 'Passed away in Lahore; posthumously awarded United Nations Prize in the Field of Human Rights.' }
     ]
   }),
 
@@ -198,6 +219,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'Founded Hamdard Foundation Pakistan and Madinat al-Hikmah university city',
       'Pioneered herbal Unani medicine standardization across South Asia',
       'Nishan-e-Imtiaz laureate'
+    ],
+    milestones: [
+      { year: '1920', title: 'Birth in Delhi', description: 'Born in Delhi into a renowned family of Unani herbal medicine practitioners.' },
+      { year: '1948', title: 'Founded Hamdard Pakistan', description: 'Migrated to Karachi and established Hamdard Laboratories Pakistan.' },
+      { year: '1985', title: 'Founded Madinat al-Hikmah', description: 'Established Madinat al-Hikmah (City of Education and Science) including Hamdard University.' },
+      { year: '1993', title: 'Governor of Sindh', description: 'Appointed Governor of Sindh (1993–1996), serving with absolute austerity.' },
+      { year: '1998', title: 'Martyrdom & Nishan-e-Imtiaz', description: 'Embraced martyrdom in Karachi; posthumously awarded Nishan-e-Imtiaz.' }
     ]
   }),
 
@@ -219,6 +247,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'Owner of automotive manufacturing giant Flex-N-Gate',
       'Owner of NFL franchise Jacksonville Jaguars & Fulham FC',
       'Major philanthropist for engineering education at University of Illinois'
+    ],
+    milestones: [
+      { year: '1950', title: 'Birth in Lahore', description: 'Born in Lahore, Punjab to a middle-class family.' },
+      { year: '1967', title: 'Moved to USA at Age 16', description: 'Emigrated to the United States with $500 to study industrial engineering at University of Illinois.' },
+      { year: '1980', title: 'Acquired Flex-N-Gate', description: 'Purchased automotive components manufacturer Flex-N-Gate, expanding it into a multi-billion dollar supplier.' },
+      { year: '2012', title: 'Acquired NFL Jacksonville Jaguars', description: 'Purchased NFL franchise Jacksonville Jaguars, becoming the first ethnic minority NFL team owner.' },
+      { year: '2013', title: 'Acquired Fulham FC', description: 'Acquired historic English Premier League football club Fulham FC in London.' }
     ]
   }),
 
@@ -240,6 +275,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'Co-founded Lahore University of Management Sciences (LUMS)',
       'Founded Packages Limited and MilkPak (Nestlé Pakistan)',
       'President of WWF International (1996–1999)'
+    ],
+    milestones: [
+      { year: '1926', title: 'Birth in Lahore', description: 'Born in Lahore, studying at Government College Lahore and Harvard Business School.' },
+      { year: '1956', title: 'Founded Packages Limited', description: 'Established Packages Limited, pioneering modern paper and packaging manufacturing in Pakistan.' },
+      { year: '1979', title: 'Founded MilkPak (Nestlé)', description: 'Established MilkPak Limited, introducing hygienic UHT dairy processing to Pakistan.' },
+      { year: '1985', title: 'Founded LUMS University', description: 'Co-founded Lahore University of Management Sciences (LUMS), serving as Pro-Chancellor.' },
+      { year: '1996', title: 'President of WWF International', description: 'Elected President of World Wide Fund for Nature (WWF International).' }
     ]
   }),
 
@@ -261,6 +303,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'First Prime Minister of Pakistan (1947–1951)',
       'Presented the historic Objectives Resolution of 1949',
       'Established early diplomatic relations with global powers'
+    ],
+    milestones: [
+      { year: '1895', title: 'Birth in Karnal', description: 'Born in Karnal, East Punjab; earned law degree from Exeter College, Oxford.' },
+      { year: '1936', title: 'General Secretary Muslim League', description: 'Elected General Secretary of All-India Muslim League alongside Quaid-e-Azam Muhammad Ali Jinnah.' },
+      { year: '1947 (Aug 15)', title: '1st Prime Minister of Pakistan', description: 'Sworn in as Pakistan\'s first Prime Minister, establishing administrative and financial infrastructure.' },
+      { year: '1949 (Mar 12)', title: 'Objectives Resolution', description: 'Presented the landmark Objectives Resolution in the Constituent Assembly, defining Pakistan\'s democratic Islamic values.' },
+      { year: '1951 (Oct 16)', title: 'Martyrdom in Rawalpindi', description: 'Assassinated at Company Bagh Rawalpindi while addressing a public gathering, honored as Shaheed-e-Millat.' }
     ]
   }),
 
@@ -283,6 +332,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
       'Chairperson of the Pakistan Peoples Party (PPP)',
       'Pioneered women welfare programs, health centers, and democratic reform'
     ],
+    milestones: [
+      { year: '1953', title: 'Birth in Karachi', description: 'Born in Karachi to Zulfikar Ali Bhutto and Nusrat Bhutto; educated at Harvard (Radcliffe) and Oxford.' },
+      { year: '1977', title: 'President of Oxford Union', description: 'Elected first Asian female President of the Oxford Union debating society.' },
+      { year: '1988 (Dec 2)', title: 'First Female Muslim Prime Minister', description: 'Sworn in as Prime Minister of Pakistan at age 35, becoming the first female head of government in the Muslim world.' },
+      { year: '1993', title: 'Second Term as Prime Minister', description: 'Re-elected Prime Minister, launching Lady Health Worker program and expanding national energy infrastructure.' },
+      { year: '2007 (Dec 27)', title: 'Martyrdom in Rawalpindi', description: 'Embraced martyrdom at Liaquat Bagh Rawalpindi following a democratic campaign rally, honored as Shaheed-e-Democracy.' }
+    ],
     awards: [{ year: '2008', title: 'United Nations Prize in the Field of Human Rights', organization: 'United Nations' }]
   }),
 
@@ -303,6 +359,13 @@ export const LEADERS_AND_SOCIAL: Personality[] = [
     keyContributions: [
       'Coined the name "PAKISTAN" in 1933 pamphlet',
       'Founded the Pakistan National Movement in Cambridge'
+    ],
+    milestones: [
+      { year: '1897', title: 'Birth in Balachaur', description: 'Born in Hoshiarpur district, Punjab, studying at Islamia College Lahore.' },
+      { year: '1930', title: 'Studied at Cambridge', description: 'Traveled to England to read law and history at Emmanuel College, Cambridge.' },
+      { year: '1933 (Jan 28)', title: 'Coined "PAKISTAN" in "Now or Never"', description: 'Published historic pamphlet "Now or Never", deriving the name PAKISTAN from regional Muslim lands.' },
+      { year: '1940', title: 'Pakistan National Movement', description: 'Expanded campaign for an independent homeland for South Asian Muslims.' },
+      { year: '1951', title: 'Passed Away in Cambridge', description: 'Passed away in Cambridge, leaving an indelible imprint on global political history as the creator of Pakistan\'s name.' }
     ]
   })
 ];
