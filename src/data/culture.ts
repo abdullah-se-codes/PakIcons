@@ -21,6 +21,13 @@ export const CULTURE_AND_ARTS: Personality[] = [
       'Nominated for the Nobel Prize in Literature',
       'Authored poetic collections Naqsh-e-Faryadi, Dast-e-Saba, and Zindan-Nama'
     ],
+    milestones: [
+      { year: '1911', title: 'Birth in Sialkot', description: 'Born in Sialkot, growing up under literary mentorship and studying Arabic & English literature.' },
+      { year: '1941', title: 'Published Naqsh-e-Faryadi', description: 'Published landmark debut poetry collection Naqsh-e-Faryadi, revolutionizing modern Urdu ghazals.' },
+      { year: '1951', title: 'Imprisonment & Zindan-Nama', description: 'Incarcerated during the Rawalpindi conspiracy case, authoring moving prison poetry Zindan-Nama.' },
+      { year: '1962', title: 'Awarded Lenin Peace Prize', description: 'Became the first Asian poet to be awarded the international Lenin Peace Prize.' },
+      { year: '1984', title: 'Posthumous National Honor', description: 'Passed away in Lahore, later honored with Nishan-e-Imtiaz for monumental literary contributions.' }
+    ],
     awards: [
       { year: '1962', title: 'Lenin Peace Prize', organization: 'International Lenin Peace Committee' },
       { year: '1990', title: 'Nishan-e-Imtiaz (Posthumous)', organization: 'Government of Pakistan' }
@@ -45,6 +52,13 @@ export const CULTURE_AND_ARTS: Personality[] = [
       'Introduced authentic Sufi Qawwali music to mainstream world music',
       'UNESCO Music Prize laureate (1995)',
       'Recorded soundtrack collaborations for Dead Man Walking and Last Temptation of Christ'
+    ],
+    milestones: [
+      { year: '1948', title: 'Birth in Faisalabad', description: 'Born into a 600-year family lineage of Qawwali masters in Faisalabad.' },
+      { year: '1971', title: 'Leader of Family Qawwali Party', description: 'Took over as primary lead vocalist following his father Fateh Ali Khan\'s passing.' },
+      { year: '1985', title: 'WOMAD International Breakthrough', description: 'Performed at WOMAD festival in the UK, captivating European and global world music critics.' },
+      { year: '1995', title: 'Hollywood Collaborations & UNESCO Prize', description: 'Collaborated with Peter Gabriel and Eddie Vedder on Dead Man Walking soundtrack; awarded UNESCO Music Prize.' },
+      { year: '1997', title: 'Global Musical Legacy', description: 'Passed away leaving an unmatched archive of Sufi devotional recordings that continue to inspire globally.' }
     ],
     awards: [{ year: '1987', title: 'President\'s Pride of Performance', organization: 'Government of Pakistan' }]
   }),
