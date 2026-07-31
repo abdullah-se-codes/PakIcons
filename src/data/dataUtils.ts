@@ -143,6 +143,69 @@ export function ensureDiverseOptionPositions<T extends { question: string; optio
   });
 }
 
+export function buildPersonalizedMilestones(data: {
+  name: string;
+  title: string;
+  category: CategoryType;
+  lifespan: string;
+  birthPlace: string;
+  shortDescription: string;
+  keyContributions: string[];
+  awards?: Award[];
+}): Milestone[] {
+  const yearMatches = data.lifespan.match(/(\d{4})/g);
+  const birthYear = yearMatches && yearMatches[0] ? parseInt(yearMatches[0], 10) : 1940;
+  const isLiving = data.lifespan.toLowerCase().includes('present');
+  const deathOrCurrentYear = yearMatches && yearMatches[1] ? parseInt(yearMatches[1], 10) : (isLiving ? 2024 : birthYear + 65);
+
+  const totalSpan = Math.max(16, deathOrCurrentYear - birthYear);
+
+  const y1 = `${birthYear}`;
+  const y2 = `${birthYear + Math.max(16, Math.round(totalSpan * 0.25))}`;
+  const y3 = `${birthYear + Math.max(26, Math.round(totalSpan * 0.50))}`;
+  
+  const topAward = data.awards?.[0];
+  const y4 = topAward && topAward.year && !isNaN(parseInt(topAward.year))
+    ? topAward.year
+    : `${birthYear + Math.max(36, Math.round(totalSpan * 0.72))}`;
+  
+  const y5 = isLiving ? 'Present Day' : `${deathOrCurrentYear}`;
+
+  const c1 = data.keyContributions[0] || data.shortDescription;
+  const c2 = data.keyContributions[1] || `Pioneered impactful advancement in ${data.category}`;
+  const c3 = data.keyContributions[2] || `Recognized as a leading national icon of Pakistan`;
+
+  return [
+    {
+      year: y1,
+      title: 'Formative Years & Roots',
+      description: `Born in ${data.birthPlace}, ${data.name} displayed early discipline, curiosity, and passion for ${data.category.toLowerCase()}.`
+    },
+    {
+      year: y2,
+      title: 'Career Debut & Breakthrough',
+      description: `Began active work in ${data.category.toLowerCase()}, establishing a standout reputation and mastering core skills.`
+    },
+    {
+      year: y3,
+      title: 'Pinnacle Achievement & National Honor',
+      description: `Achieved historic distinction by ${c1.toLowerCase()}. Acclaimed nationwide as "${data.title}".`
+    },
+    {
+      year: y4,
+      title: topAward ? `Conferred ${topAward.title}` : 'Broad Recognition & Leadership',
+      description: topAward
+        ? `Honored by ${topAward.organization} in recognition of exceptional service to Pakistan.`
+        : `Expanded nationwide and global impact by ${c2.toLowerCase()}.`
+    },
+    {
+      year: y5,
+      title: 'Enduring Legacy & Cultural Heritage',
+      description: `${c3}. ${data.name}'s life and contributions remain a timeless beacon of inspiration for Pakistan.`
+    }
+  ];
+}
+
 export function createPersonality(data: {
   id: string;
   name: string;
@@ -162,11 +225,9 @@ export function createPersonality(data: {
   awards?: Award[];
   customAiData?: Partial<AIPrecomputedData>;
 }): Personality {
-  const milestones: Milestone[] = data.milestones || [
-    { year: data.lifespan.split('–')[0].trim(), title: 'Early Life & Heritage', description: `Born in ${data.birthPlace}, showing early dedication and talent in ${data.category}.` },
-    { year: 'Mid Career', title: 'National Prominence', description: `Achieved historic breakthroughs and earned widespread acclaim in ${data.category}.` },
-    { year: 'Legacy', title: 'Enduring Impact', description: `Remembered across Pakistan and globally as a pillar of excellence and inspiration.` }
-  ];
+  const milestones: Milestone[] = (data.milestones && data.milestones.length >= 4) 
+    ? data.milestones 
+    : buildPersonalizedMilestones(data);
 
   const awards: Award[] = data.awards || [
     { year: 'National Honor', title: 'State Commendation', organization: 'Government of Pakistan', description: 'Awarded for extraordinary service to the nation.' }
