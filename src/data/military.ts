@@ -21,6 +21,13 @@ export const MILITARY_HEROES: Personality[] = [
       'Directly targeted enemy armor and artillery positions with precision',
       'Awarded the Nishan-e-Haider for supreme tactical courage and leadership'
     ],
+    milestones: [
+      { year: '1928', title: 'Birth in Hong Kong', description: 'Born in Hong Kong, later moving to Gujrat, Punjab to join the Pakistan military.' },
+      { year: '1950', title: 'Sword of Honour at PMA Kakul', description: 'Graduated from Pakistan Military Academy Kakul, awarded the prestigious Sword of Honour and Norman Gold Medal.' },
+      { year: '1965 (Sept 6)', title: 'Defense of Burki Sector', description: 'Commanded the frontline company at Burki sector near Lahore, holding off massive enemy armor attacks.' },
+      { year: '1965 (Sept 12)', title: 'Supreme Martyrdom', description: 'Directing artillery strikes from an exposed vantage point, embraced martyrdom after 6 days of continuous battle.' },
+      { year: '1965', title: 'Awarded Nishan-e-Haider', description: 'Posthumously awarded Pakistan\'s highest military award for legendary heroism and strategic brilliance.' }
+    ],
     awards: [{ year: '1965', title: 'Nishan-e-Haider', organization: 'Government of Pakistan' }]
   }),
 
@@ -42,6 +49,13 @@ export const MILITARY_HEROES: Personality[] = [
       'Foiled the hijacking of a PAF T-33 trainer jet',
       'Showed utmost patriotic valor and composure under fatal crisis at age 20',
       'Became the youngest pilot and only PAF officer to receive Nishan-e-Haider'
+    ],
+    milestones: [
+      { year: '1951', title: 'Birth in Karachi', description: 'Born in Karachi into a notable Rajput family, fascinated with aviation from childhood.' },
+      { year: '1968', title: 'Joined Pakistan Air Force', description: 'Enrolled in 51st GD(P) course at PAF Academy Risalpur, displaying top marksmanship.' },
+      { year: '1971 (Feb)', title: 'Commissioned Pilot Officer', description: 'Commissioned into Pakistan Air Force as a fighter pilot officer.' },
+      { year: '1971 (Aug 20)', title: 'Heroic Foil of Hijacking', description: 'Struggled on board T-33 trainer jet to prevent unauthorized hijacking, forcing crash near border.' },
+      { year: '1971', title: 'Nishan-e-Haider Award', description: 'Posthumously awarded Nishan-e-Haider, becoming the youngest recipient in history.' }
     ],
     awards: [{ year: '1971', title: 'Nishan-e-Haider', organization: 'Pakistan Air Force' }]
   }),
